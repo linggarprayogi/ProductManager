@@ -45,6 +45,7 @@ public class AppController {
 		return "redirect:/";
 	}
 
+	// Edit by Id Product
 	@RequestMapping("/edit/{id}")
 	public ModelAndView showEditproductForm(@PathVariable(name = "id") Long id) {
 		ModelAndView mav     = new ModelAndView("edit_product");
