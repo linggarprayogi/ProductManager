@@ -19,6 +19,7 @@ public class AppController {
 	@Autowired
 	private ProductService service;
 
+	// Halaman Index
 	@RequestMapping("/index")
 	public String viewHomePage(Model model) {
 		List<Product> listProducts = service.listAll();
