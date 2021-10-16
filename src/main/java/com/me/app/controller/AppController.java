@@ -37,6 +37,7 @@ public class AppController {
 		return "new_product";
 	}
 
+	//
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String saveProduct(@ModelAttribute("product") Product product) {
 		service.save(product);
