@@ -28,6 +28,7 @@ public class AppController {
 		return "index";
 	}
 
+	// Insert new product
 	@RequestMapping("/new")
 	public String showNewproductForm(Model model) {
 		Product product = new Product();
