@@ -54,7 +54,8 @@ public class AppController {
 
 		return mav;
 	}
-
+	
+	// Delete
 	@RequestMapping("/delete/{id}")
 	public String deleteProduct(@PathVariable(name = "id") Long id) {
 		service.delete(id);
