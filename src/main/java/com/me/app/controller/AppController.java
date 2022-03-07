@@ -19,6 +19,7 @@ public class AppController {
 	@Autowired
 	private ProductService service;
 
+	// Halaman Index
 	@RequestMapping("/index")
 	public String viewHomePage(Model model) {
 		List<Product> listProducts = service.listAll();
@@ -27,6 +28,7 @@ public class AppController {
 		return "index";
 	}
 
+	// Insert new product
 	@RequestMapping("/new")
 	public String showNewproductForm(Model model) {
 		Product product = new Product();
@@ -35,12 +37,15 @@ public class AppController {
 		return "new_product";
 	}
 
+	// Save product baru
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String saveProduct(@ModelAttribute("product") Product product) {
 		service.save(product);
+
 		return "redirect:/";
 	}
 
+	// Edit by Id Product
 	@RequestMapping("/edit/{id}")
 	public ModelAndView showEditproductForm(@PathVariable(name = "id") Long id) {
 		ModelAndView mav     = new ModelAndView("edit_product");
