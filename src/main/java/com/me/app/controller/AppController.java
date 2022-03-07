@@ -48,13 +48,14 @@ public class AppController {
 	// Edit by Id Product
 	@RequestMapping("/edit/{id}")
 	public ModelAndView showEditproductForm(@PathVariable(name = "id") Long id) {
-		ModelAndView mav     = new ModelAndView("edit_product");
-		Product      product = service.get(id);
+		ModelAndView mav = new ModelAndView("edit_product");
+		Product product = service.get(id);
 		mav.addObject("product", product);
 
 		return mav;
 	}
 
+	// delete
 	@RequestMapping("/delete/{id}")
 	public String deleteProduct(@PathVariable(name = "id") Long id) {
 		service.delete(id);
