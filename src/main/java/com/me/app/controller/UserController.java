@@ -23,7 +23,6 @@ public class UserController {
 	@Autowired
 	UserServices    userServices;
 
-	// Login form
 	@RequestMapping("/")
 	public String login() {
 		return "login.html";
